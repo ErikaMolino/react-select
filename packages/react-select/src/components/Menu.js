@@ -8,7 +8,7 @@ import {
   type Node,
 } from 'react';
 import { jsx } from '@emotion/core';
-import { createPortal } from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import {
   animatedScrollTo,
@@ -525,7 +525,7 @@ export class MenuPortal extends Component<MenuPortalProps, MenuPortalState> {
       <PortalPlacementContext.Provider
         value={{ getPortalPlacement: this.getPortalPlacement }}
       >
-        {appendTo ? createPortal(menuWrapper, appendTo) : menuWrapper}
+        {appendTo ? ReactDOM.createPortal(menuWrapper, appendTo) : menuWrapper}
       </PortalPlacementContext.Provider>
     );
   }
